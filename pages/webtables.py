@@ -28,6 +28,9 @@ class WebTables(BasePage):
         self.edit_modal_form = WebElement(driver, 'div.fade.modal.show > div')
         self.btn_edit_submit = WebElement(driver, '#submit')
         self.btn_delete = WebElement(driver, '#delete-record-4')
+        self.btn_delete_str = WebElement(driver, '[title="Delete"]')
+
+        self.no_rows = WebElement(driver, 'div.rt-noData')
 
 
 

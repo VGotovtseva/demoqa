@@ -18,7 +18,7 @@ def test_webtables(browser):
     assert web_tables_page.btn_add.exist()
     web_tables_page.btn_add.click()
 
-    assert web_tables_page.modal_dialog.exist()
+    assert web_tables_page.modal_dialog.visible()
 
     web_tables_page.btn_submit.click()
     assert web_tables_page.modal_form.get_dom_attribute('class') == 'was-validated'

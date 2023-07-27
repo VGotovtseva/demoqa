@@ -2,6 +2,7 @@ import time
 
 from pages.form_page import FormPage
 
+
 def test_login_form_validate(browser):
     form_page = FormPage(browser)
 
