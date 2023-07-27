@@ -19,6 +19,7 @@ class FormPage(BasePage):
         self.current_address = WebElement(driver, '#currentAddress')
         self.state = WebElement(driver, '#react-select-3-input')
         self.city = WebElement(driver, '#react-select-4-input')
+        self.form = WebElement(driver, '#userForm')
 
 
 
