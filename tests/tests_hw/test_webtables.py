@@ -1,7 +1,6 @@
 import time
 
 from pages.webtables import WebTables
-from selenium.webdriver.common.keys import Keys
 
 
 def test_webtables(browser):
