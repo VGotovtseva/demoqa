@@ -8,17 +8,13 @@ from pages.alerts import Alerts
 from pages.browser_tab import BrowserTab
 
 
-def test_seo_title(browser):
-    home_page = DemoQa(browser)
-
-    home_page.visit()
-    assert home_page.get_title() == 'DEMOQA'
-
-
 @pytest.mark.parametrize('pages', [Accordion, Alerts, DemoQa, BrowserTab])
-def test_check_title_all_pages(browser, pages):
+def test_seo_meta(browser, pages):
     page = pages(browser)
 
     page.visit()
     time.sleep(2)
-    assert page.get_title() == 'DEMOQA'
+    assert page.meta.exist()
+    assert page.meta.get_dom_attribute('name') == 'viewport'
+    assert page.meta.get_dom_attribute('content') == "width=device-width,initial-scale=1"
+
