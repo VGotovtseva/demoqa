@@ -21,7 +21,9 @@ def test_web_tables_navigation(browser):
     assert web_tables_page.btn_previous.get_dom_attribute('disabled')
     assert web_tables_page.btn_next.get_dom_attribute('disabled')
     web_tables_page.btn_previous.click()
+    assert web_tables_page.current_page.get_dom_attribute('value') == '1'
     web_tables_page.btn_next.click()
+    assert web_tables_page.current_page.get_dom_attribute('value') == '1'
 
     for i in range(3):
         web_tables_page.btn_add.click()
