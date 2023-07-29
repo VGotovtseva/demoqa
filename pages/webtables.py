@@ -29,7 +29,12 @@ class WebTables(BasePage):
         self.btn_edit_submit = WebElement(driver, '#submit')
         self.btn_delete = WebElement(driver, '#delete-record-4')
         self.btn_delete_str = WebElement(driver, '[title="Delete"]')
-
+        self.rows_page = WebElement(driver, 'span.select-wrap.-pageSizeOptions > select')
+        self.rows_five = WebElement(driver, 'select > option:nth-child(1)')
+        self.btn_previous = WebElement(driver, '.-previous > button')
+        self.btn_next = WebElement(driver, '.-next > button')
+        self.total_pages = WebElement(driver, '.-totalPages')
+        self.current_page = WebElement(driver, 'input[type=number]')
         self.no_rows = WebElement(driver, 'div.rt-noData')
 
 
