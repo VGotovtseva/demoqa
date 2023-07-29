@@ -9,6 +9,18 @@ def test_check_alert(browser):
 
     assert alert_page.btn_timer_alert.exist()
     alert_page.btn_timer_alert.click()
-    time.sleep(5)
+    for i in range(4):
+        time.sleep(1)
+        assert not alert_page.alert()
+    time.sleep(1)
     assert alert_page.alert()
 
+   # times_temp = 0 решение с помощью бесконечного цикла
+   # while True:
+   #     time.sleep(1)
+   #     times_temp += 1
+   #     if times_temp == 5:
+   #        assert alert_page.alert()
+   #         break
+   #     else:
+   #         assert not alert_page.alert()
