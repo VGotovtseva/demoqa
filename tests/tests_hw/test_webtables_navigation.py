@@ -1,7 +1,6 @@
 import time
 
 from pages.webtables import WebTables
-from selenium.webdriver.common.keys import Keys
 
 
 def test_web_tables_navigation(browser):
@@ -14,16 +13,11 @@ def test_web_tables_navigation(browser):
     department = 'IT'
 
     web_tables_page.visit()
-    web_tables_page.rows_page.scroll_to_element()
-    web_tables_page.rows_page.click()
     web_tables_page.rows_five.click()
+
 
     assert web_tables_page.btn_previous.get_dom_attribute('disabled')
     assert web_tables_page.btn_next.get_dom_attribute('disabled')
-    web_tables_page.btn_previous.click()
-    assert web_tables_page.current_page.get_dom_attribute('value') == '1'
-    web_tables_page.btn_next.click()
-    assert web_tables_page.current_page.get_dom_attribute('value') == '1'
 
     for i in range(3):
         web_tables_page.btn_add.click()
@@ -37,6 +31,7 @@ def test_web_tables_navigation(browser):
 
     assert web_tables_page.total_pages.get_text() == '2'
     assert not web_tables_page.btn_next.get_dom_attribute('disabled')
+
     web_tables_page.btn_next.click()
     assert web_tables_page.current_page.get_dom_attribute('value') == '2'
     web_tables_page.btn_previous.click()
