@@ -36,6 +36,11 @@ class WebTables(BasePage):
         self.total_pages = WebElement(driver, '.-totalPages')
         self.current_page = WebElement(driver, 'input[type=number]')
         self.no_rows = WebElement(driver, 'div.rt-noData')
+        self.th_table = WebElement(driver, '.rt-th')
+
+
+
+
 
 
 
