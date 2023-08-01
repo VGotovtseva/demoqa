@@ -1,10 +1,14 @@
 import time
 
+import pytest
+
 from pages.modal_dialogs import ModalDialogs
 
 
 def test_check_modal(browser):
     modal_page = ModalDialogs(browser)
+    if modal_page.code_status() != 200:
+        pytest.skip('страница не доступна')
     modal_page.visit()
 
     assert modal_page.small_modal.exist() \
